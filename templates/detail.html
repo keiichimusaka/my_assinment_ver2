@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block header%}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">詳細画面</h1>
+    <p class="lead">アルバイトの詳細です</p>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block content%}
+<div class = "container">
+<div class="alert alert-success" role="alert">
+
+<p>名前：{{object.name}}</p>
+<p>年齢{{object.age}}</p>
+<p>希望時間：{{object.avalabitily}}</p>
+<p>詳細：{{object.description}}</p>
+<p>誕生日：{{object.birthday}}</p>
+
+
+
+
+</div>
+
+
+
+{% endblock content%}

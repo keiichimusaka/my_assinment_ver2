@@ -1,0 +1,18 @@
+{% extends "base.html"%}
+
+{%block content%}
+<form action = "" method = "post">　{% csrf_token %}
+{% comment %} actionはボタンを押した後、どのページに遷移するのか指定
+``Post は値を送る時、getはWEBの観覧など
+ {% endcomment %}
+
+ {{form.as_p}}
+ 
+
+ {% comment %} CreateViewと対応している　→＜P>でフォームないをかこう {% endcomment %}
+
+<input type = "submit" value = "更新する">
+</form>
+{% endblock content%}
+
+ 
