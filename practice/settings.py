@@ -25,11 +25,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*%*k0^*)ru$250r@u7*fzy-8+4-zd*zj__xz#(ols5hu+x1&c%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # →本番環境ではfalseにする。エラーが出た際に、色々表示されていしまう
 
-ALLOWED_HOSTS = ["52.194.68.1"]
+ALLOWED_HOSTS = []
 # →外部サーバでゆるすもの
 
 STATIC_ROOT = '/home/ubuntu/mysite/static'
@@ -62,6 +62,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'practice.middleware.auth.authMiddleware',
+    'whitenoise.storage.CompressedManifestStaticFilesStorage',
+
+
 ]
 
 # →リクエストを受け取ってレスポンスを返す間に実施する処理のこと
@@ -139,6 +142,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_URL = '/assets/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
